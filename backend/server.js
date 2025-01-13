@@ -30,11 +30,21 @@ if (process.env.NODE_ENV == "production") {
 else{
   app.get('/', (req, res) => res.send('Please set to production'))
 }
+
+
 // Error Handlers
 app.use(errorHandler);
 app.use(notFound);
 
 // Logger middleware
 app.use(logger);
+
+app.use(
+	cors({
+		origin: "https://mernapp-frontend-r92o.onrender.com", // Replace with your frontend URL
+		methods: "GET,POST,PUT,DELETE", // Specify allowed methods
+		credentials: true, // If you're using cookies or other credentials
+	})
+);
 
 app.listen(port, () => console.log(`Server is running on port ${port}`));
