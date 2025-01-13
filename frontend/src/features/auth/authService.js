@@ -1,6 +1,6 @@
 import axios from "axios";
 
-const API_URL = "/api/users/"; // Update this to match your backend endpoint
+const API_URL = "https://mernapp-server-0zza.onrender.com/api/users/api/users/
 
 // Register a user
 const register = async (userData) => {
