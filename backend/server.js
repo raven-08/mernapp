@@ -34,7 +34,6 @@ else{
 app.use(errorHandler);
 app.use(notFound);
 
-// Logger middleware
-app.use(logger);
+
 
 app.listen(port, () => console.log(`Server is running on port ${port}`));
