@@ -36,8 +36,7 @@ else{
 app.use(errorHandler);
 app.use(notFound);
 
-// Logger middleware
-app.use(logger);
+
 
 app.use(
 	cors({
