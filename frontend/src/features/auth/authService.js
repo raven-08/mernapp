@@ -1,6 +1,6 @@
 import axios from "axios";
 
-const API_URL = "https://mernapp-server-0zza.onrender.com/api/users/api/users/
+const API_URL = "https://mernapp-server-0zza.onrender.com/api/users/";
 
 // Register a user
 const register = async (userData) => {
