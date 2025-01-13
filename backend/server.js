@@ -18,11 +18,11 @@ app.use(express.urlencoded({ extended: false }));
 
 // Use CORS middleware
 app.use(
-	cors({
-		origin: "https://mernapp-frontend-r92o.onrender.com", // Replace with your frontend URL
-		methods: "GET,POST,PUT,DELETE", // Specify allowed methods
-		credentials: true, // If you're using cookies or other credentials
-	})
+  cors({
+    origin: "https://mernapp-frontend-r92o.onrender.com", // Replace with your frontend URL
+    methods: "GET,POST,PUT,DELETE",
+    credentials: true,
+  })
 );
 
 app.use("/api/goals", require("./routes/goalRoutes"));
@@ -30,13 +30,13 @@ app.use("/api/users", require("./routes/userRoutes"));
 
 // Serve frontend
 if (process.env.NODE_ENV === "production") {
-	app.use(express.static(path.join(__dirname, "../frontend/build")));
+  app.use(express.static(path.join(__dirname, "../frontend/build")));
 
-	app.get("*", (req, res) =>
-		res.sendFile(path.resolve(__dirname, "../", "frontend", "build", "index.html"))
-	);
+  app.get("*", (req, res) =>
+    res.sendFile(path.resolve(__dirname, "../", "frontend", "build", "index.html"))
+  );
 } else {
-	app.get("/", (req, res) => res.send("Please set to production"));
+  app.get("/", (req, res) => res.send("Please set to production"));
 }
 
 // Error Handlers
