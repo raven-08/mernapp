@@ -1,6 +1,7 @@
 import axios from "axios";
 
-const API_URL = "https://mernapp-server-0zza.onrender.com";
+const API_URL = `${process.env.REACT_APP_API_URL || "http://localhost:5000"}/api/goals/`;
+
 
 // Create new goal
 const createGoal = async (goalData, token) => {
